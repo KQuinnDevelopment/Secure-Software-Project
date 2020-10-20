@@ -12,7 +12,7 @@ namespace Life_Organizer.Models
         [Required]
         public string UserID { get; set; }
 
-        [Required, DataType(DataType.Text), MaxLength(100), Display(Name = "Name")]
+        [Required, DataType(DataType.Text), MaxLength(100), Display(Name = "Title")]
         public virtual string Name { get; set; }
 
         [Required, DataType(DataType.DateTime), Display(Name = "Date")]

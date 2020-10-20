@@ -6,9 +6,6 @@ namespace Life_Organizer.Models
     public class Exercise : UserEvent
     {
         // mandatory
-        [Required, DataType(DataType.Text), MaxLength(100), Display(Name = "Exercise")]
-        public override string Name { get; set; }
-
         [Required, Range(0, 20000), Display(Name = "Calories Burned")]
         public int Calories { get; set; }
 

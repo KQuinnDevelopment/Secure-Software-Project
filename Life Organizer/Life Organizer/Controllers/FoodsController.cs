@@ -72,8 +72,11 @@ namespace Life_Organizer.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserID,Name,Calories,Description,MacroCarbohydrates,MacroFats,MacroProteins")] Food food)
+        public async Task<IActionResult> Create([Bind("Name,Calories,Description,MacroCarbohydrates,MacroFats,MacroProteins")] Food food)
         {
+            ModelState.Remove("UserID");
+            food.UserID = _userManager.GetUserId(User);
+
             if (ModelState.IsValid)
             {
                 _context.Add(food);

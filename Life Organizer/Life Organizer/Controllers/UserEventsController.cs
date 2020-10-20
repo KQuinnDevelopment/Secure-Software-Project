@@ -90,8 +90,11 @@ namespace Life_Organizer.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserID,Name,Date,Description,Duration")] UserEvent userEvent)
+        public async Task<IActionResult> Create([Bind("Name,Date,Description,Duration")] UserEvent userEvent)
         {
+            ModelState.Remove("UserID");
+            userEvent.UserID = _userManager.GetUserId(User);
+
             if (ModelState.IsValid)
             {
                 _context.Add(userEvent);
