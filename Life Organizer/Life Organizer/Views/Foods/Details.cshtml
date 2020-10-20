@@ -1,0 +1,54 @@
+﻿@model Life_Organizer.Models.Food
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Calories)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MacroCarbohydrates)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MacroCarbohydrates)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MacroFats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MacroFats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MacroProteins)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MacroProteins)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

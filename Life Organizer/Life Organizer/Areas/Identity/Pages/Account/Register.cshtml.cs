@@ -51,9 +51,6 @@ namespace Life_Organizer.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required, DataType(DataType.Text), Display(Name = "User Name")]
-            public string UserName { get; set; }
-
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -87,7 +84,7 @@ namespace Life_Organizer.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email, 
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, 
                     BirthDate = Input.BirthDate, FirstName = Input.FirstName, LastName = Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

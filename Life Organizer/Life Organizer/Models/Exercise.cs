@@ -9,9 +9,6 @@ namespace Life_Organizer.Models
         [Required, DataType(DataType.Text), MaxLength(100), Display(Name = "Exercise")]
         public override string Name { get; set; }
 
-        [Required, DataType(DataType.DateTime), Display(Name = "Start Time")]
-        public override DateTime Date { get; set; }
-
         [Required, Range(0, 20000), Display(Name = "Calories Burned")]
         public int Calories { get; set; }
 
